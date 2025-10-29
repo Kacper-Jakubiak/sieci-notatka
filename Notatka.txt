@@ -1,0 +1,67 @@
+# ==============================================
+# Wireshark
+# ==============================================
+stp (jako filtr, SpanningTreeProtocol)
+
+# ==============================================
+# Kable
+# ==============================================
+Porty konsolowe z tyło (na dole) Switchy (kolorowe)
+
+# ==============================================
+# Putty opis
+# ==============================================
+Switch>			# User EXEC mode (enable przechodzi dalej)
+Switch#			# Privileged EXEC mode (configure terminal)
+Switch(config)#		# Global Configuration mode
+Switch(config-inf)#	# Interface Configuration mode
+
+wychodzenie:
+{
+	exit - 1 do "góry"
+	exit
+	end lub ctrl+z (All -> Priv)
+	disable (Priv -> User)
+	quit (Koniec)
+}
+# ==============================================
+# CISCO
+# ==============================================
+
+# -------- Zarządzanie interfejsami --------
+shutdown                        : wyłączenie portu
+no shutdown                     : włączenie portu
+
+# ------------- Tryby switcha --------------
+exit                            : powrót
+end                             : powrót do Switch#
+enable                          : wejście do Switch#
+disable                         : powrót do Switch>
+quit                            : zakończenie
+conf t 				: wejście do (config)
+
+# ----------------- Pomoc ------------------
+?                               : lista komend
+<letter>?                       : komendy od litery
+<command> ?                     : argumenty komendy
+show mac address-table          : tabela MAC
+show mac-address-table          : tabela MAC 2.0
+
+# ----------- Konfiguracja portu -----------
+conf t                          : konfiguracja globalna
+int <port_no>                   : konfiguracja interfejsu
+int range Fa0/1  - 4            : konfiguracja kilku portów (2 spacje)
+
+# ------------------ VLAN ------------------
+vlan <vlan_no>                  : stworzenie VLAN
+name <name>			: nadanie nazwy
+exit                            : powrót
+
+int <port_no>        	        : wybór portu
+switchport mode access          : port access
+switchport access vlan <vlan_no>: przypisanie VLAN do wybranego portu
+
+int <port_no>        	        : wybór portu
+switchport mode trunk           : port trunk
+switchport trunk allowed vlan <vlan_no_list> : VLAN-y na trunk
+switchport trunk allowed vlan remove <vlan_no_list> : VLAN-y na trunk zakaz
