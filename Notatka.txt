@@ -46,6 +46,8 @@ conf t 				: wejście do (config)
 <command> ?                     : argumenty komendy
 show mac address-table          : tabela MAC
 show mac-address-table          : tabela MAC 2.0
+show interface status			: status portów
+show spanning-tree				: drzewo stp
 
 # ----------- Konfiguracja portu -----------
 conf t                          : konfiguracja globalna
@@ -65,3 +67,15 @@ int <port_no>        	        : wybór portu
 switchport mode trunk           : port trunk
 switchport trunk allowed vlan <vlan_no_list> : VLAN-y na trunk
 switchport trunk allowed vlan remove <vlan_no_list> : VLAN-y na trunk zakaz
+
+# ------------------ STP -------------------
+debug spanning-tree events		: debug logi
+
+spanning-tree vlan 1 priority <priority_no>	: priority switcha
+spanning-tree vlan 1 max-age <time>			: co jaki czas wysyłamy
+spanning-tree vlan 1 hello <time>			: co jaki czas odbieramy
+no spanning-tree vlan 1 					: wyłączenie STP
+
+spanning-tree port-priority <prio>			: priority portu
+
+RSTP, proposal/agreement, TCN
