@@ -1,0 +1,15 @@
+enable
+    config t
+        int <port>
+            ip address <address> <mask>
+            no shutdown
+            end
+
+enable
+    config t
+        int <port>
+            mtu 500
+
+show ip interface brief
+show arp
+show ip route

@@ -78,4 +78,4 @@ no spanning-tree vlan 1 					: wyłączenie STP
 
 spanning-tree port-priority <prio>			: priority portu
 
-RSTP, proposal/agreement, TCN
+RSTP -> proposal/agreement, TCN
