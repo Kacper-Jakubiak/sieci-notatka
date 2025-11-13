@@ -1,0 +1,10 @@
+ping <adres>            : sprawdza dostępność hosta i mierzy czas odpowiedzi
+tracert <adres>         : śledzi trasę pakietów do hosta, pokazuje wszystkie routery po drodze
+ipconfig    /all        : wyświetla pełną konfigurację sieciową wszystkich interfejsów
+            /release    : zwalnia obecny adres IP przypisany przez DHCP
+            /renew      : odnawia adres IP przypisany przez DHCP
+            /flushdns   : czyści lokalną pamięć podręczną DNS
+nslookup <domena>       : sprawdza rekordy DNS dla podanej domeny
+arp -a                  : wyświetla tablicę ARP (mapowanie adresów IP na MAC)
+arp -d *                : usuwa wszystkie dynamiczne wpisy ARP z tablicy
+netstat -an             : pokazuje aktywne połączenia sieciowe i porty nasłuchujące

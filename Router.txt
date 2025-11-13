@@ -1,3 +1,4 @@
+-------- konfiguracja adresu IP na  danym porcie -------------
 enable
     config t
         int <port>
@@ -5,11 +6,16 @@ enable
             no shutdown
             end
 
+
+------- ustawiamy max wielkość ramki (po stronie na którą wysyłamy) -----
 enable
     config t
         int <port>
             mtu 500
 
-show ip interface brief
-show arp
-show ip route
+show ip interface brief     : opis wszystkich portów
+show arp                    : tablica apr (IP -> Mac)
+show ip route               : tablica routingu (którędy do danych IP)
+no shutdown                 : włączamy port (interface), wymagane dla routerów
+ip address <address> <mask> : ustawiamy adres IP dla danego portu w danej podsieci
+mtu <size>                  : max wielkość ramki po stronie wysyłanej (my wysyłamy)

@@ -69,7 +69,7 @@ switchport trunk allowed vlan <vlan_no_list> : VLAN-y na trunk
 switchport trunk allowed vlan remove <vlan_no_list> : VLAN-y na trunk zakaz
 
 # ------------------ STP -------------------
-debug spanning-tree events		: debug logi
+debug spanning-tree events		: debug logi zaczną być pokazywane
 
 spanning-tree vlan 1 priority <priority_no>	: priority switcha
 spanning-tree vlan 1 max-age <time>			: co jaki czas wysyłamy
@@ -77,5 +77,3 @@ spanning-tree vlan 1 hello <time>			: co jaki czas odbieramy
 no spanning-tree vlan 1 					: wyłączenie STP
 
 spanning-tree port-priority <prio>			: priority portu
-
-RSTP -> proposal/agreement, TCN

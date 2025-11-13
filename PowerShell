@@ -1,3 +1,0 @@
-ipconfig
-arp -a
-arp -d *
