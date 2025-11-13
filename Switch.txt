@@ -1,29 +1,8 @@
-# ==============================================
-# Wireshark
-# ==============================================
-stp (jako filtr, SpanningTreeProtocol)
-
-# ==============================================
-# Kable
-# ==============================================
-Porty konsolowe z tyło (na dole) Switchy (kolorowe)
-
-# ==============================================
-# Putty opis
-# ==============================================
 Switch>			# User EXEC mode (enable przechodzi dalej)
 Switch#			# Privileged EXEC mode (configure terminal)
 Switch(config)#		# Global Configuration mode
 Switch(config-inf)#	# Interface Configuration mode
 
-wychodzenie:
-{
-	exit - 1 do "góry"
-	exit
-	end lub ctrl+z (All -> Priv)
-	disable (Priv -> User)
-	quit (Koniec)
-}
 # ==============================================
 # CISCO
 # ==============================================
@@ -64,9 +43,9 @@ switchport mode access          : port access
 switchport access vlan <vlan_no>: przypisanie VLAN do wybranego portu
 
 int <port_no>        	        : wybór portu
-switchport mode trunk           : port trunk
-switchport trunk allowed vlan <vlan_no_list> : VLAN-y na trunk
-switchport trunk allowed vlan remove <vlan_no_list> : VLAN-y na trunk zakaz
+switchport mode trunk           : ustawiamy port jako trunk
+switchport trunk allowed vlan <vlan_no_list> 		: dopuszczamy VLAN-y na trunk
+switchport trunk allowed vlan remove <vlan_no_list> : zakazujemy VLAN-y na trunk
 
 # ------------------ STP -------------------
 debug spanning-tree events		: debug logi zaczną być pokazywane
