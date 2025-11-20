@@ -1,4 +1,4 @@
--------- konfiguracja adresu IP na  danym porcie -------------
+# ----- konfiguracja adresu IP na  danym porcie ------
 enable
     config t
         int <port>
@@ -7,11 +7,37 @@ enable
             end
 
 
-------- ustawiamy max wielkość ramki (po stronie na którą wysyłamy) -----
+# ----------- ustawiamy max wielkość ramki -----------
+// po stronie gdzie wysyłamy
 enable
     config t
         int <port>
-            mtu 500
+            mtu <size>
+
+# ---------------- konfiguracja dhcp -----------------
+enable
+    config t
+        service dhcp
+        ip dhcp pool <name>
+            network <ip> <mask>
+            default-router <ip>
+            dns-server <ip>
+            exit
+        ip dhcp excluded-address <start> <end>
+        end
+
+# ------------ konfiguracja serial portu -------------
+enable
+    conf t
+        int <port>
+            ip address <ip> <mask>
+            clock rate <nr_rate> //TYLKO DCE
+            no shutdown
+
+# ----------------- trasa statyczna ------------------
+enable
+    conf t
+        ip route <dokąd> <mask> <którędy>
 
 show ip interface brief     : opis wszystkich portów
 show arp                    : tablica apr (IP -> Mac)

@@ -1,4 +1,4 @@
------ ustawianie IP access-pointa ---------
+# ----------- ustawianie IP access-pointa ------------
 enable
     conf t
         int bvi 1
@@ -6,23 +6,23 @@ enable
             no shutdown
             exit
 
----- utworzenie radiowej sieci -------
+# ------------ utworzenie radiowej sieci -------------
 dot11 ssid <nazwa>
     //opcjonalnie vlan <vlan_no>
     authentication opend
     guest mode
     exit
 
---- dodanie stworzonych sieci do inteface -----
+# ------ dodanie stworzonych sieci do inteface -------
 interface dot11radio0
     ssid <nazwa>
     no shutdown
 
------ dodanie kilku mostków
+# -------------- dodanie kilku mostków ---------------
 bridge irb
 bridge <bridge_no> protocol ieee        : stworzenie mostka OFF/ON line
 
------ komendy
+# --------------------- komendy ---------------------- 
 encapsulation dot1q <vlan_no>           : ten port na vlan 10
 bridge-group <bridge_no>                : ustawiamy port do bridgu
 int dotradio0.<nr>                      : wejście (+ stworzenie) osobnych konfiguracji
