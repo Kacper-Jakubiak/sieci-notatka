@@ -38,6 +38,7 @@ enable
 enable
     conf t
         ip route <dokąd> <mask> <którędy>
+                //siec  //maska //ip następnego routera
 
 show ip interface brief     : opis wszystkich portów
 show arp                    : tablica apr (IP -> Mac)
